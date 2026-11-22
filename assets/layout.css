@@ -1,0 +1,56 @@
+/* Layout refinements: preserve readable wrapping and consistent action placement. */
+.header { background: var(--paper); }
+.header nav, .brand { min-width: 0; }
+.brand-icon { flex: 0 0 auto; }
+.button { text-align: center; line-height: 1.55; max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
+.button.secondary:hover { background: var(--pale); color: var(--green); }
+.button.light:hover { background: #e1f2c5; color: var(--green); }
+.button:disabled:hover { transform: none; }
+.course, .bundle { display: flex; flex-direction: column; min-width: 0; }
+.course > .button, .bundle > .button { margin-top: auto; }
+.course > details { margin-bottom: 14px; }
+.course-top { flex-wrap: wrap; }
+.pack-name { min-width: 0; overflow-wrap: anywhere; }
+.course h3, .bundle h3, .subhero h1 { overflow-wrap: anywhere; }
+.course p, .bundle p, .prose p, .notice, .review dd { overflow-wrap: anywhere; }
+.course-list, .bundle-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.bundle > .button { flex-shrink: 0; }
+.finder-grid > *, .form-grid > *, .price-row > *, .intro > *, .timeline > *, .learning-grid > * { min-width: 0; }
+.price-row { grid-template-columns: minmax(0, 1fr) auto; }
+.price-row h3 { overflow-wrap: anywhere; }
+.form-actions > .button { flex-shrink: 0; }
+input, select, textarea { max-width: 100%; }
+textarea { resize: vertical; }
+.form-wrap legend { max-width: 100%; }
+.footer > div { flex-wrap: wrap; }
+.curriculum-download { padding-bottom: 35px; }
+.review dd { min-width: 0; }
+@media (max-width: 900px) and (min-width: 621px) {
+  .course-top { display: flex; align-items: flex-start; }
+  .course-top .tag { margin-top: 0; }
+  .hero h1 { font-size: clamp(1.8rem, 3.65vw, 2.5rem); }
+}
+@media (max-width: 620px) {
+  .course-list, .bundle-grid { grid-template-columns: minmax(0, 1fr); }
+  .course-top { gap: 8px 12px; align-items: flex-start; }
+  .course-top .tag { white-space: normal; }
+  .filter button { min-height: 42px; }
+  .form-actions { flex-direction: column-reverse; align-items: stretch; }
+  .form-actions > .button { flex: auto; width: 100%; }
+  .form-actions > .text-link { text-align: center; padding: 8px; }
+  .hero-actions { align-items: flex-start; }
+  .hero-description br, .intro > p:last-child br, .cta > .wrap > p:not(.eyebrow) br { display: none; }
+  .visual-caption { right: 20px; }
+  .visual-caption span { overflow-wrap: anywhere; }
+  .price-row span { line-height: 1.6; }
+  .steps li { overflow-wrap: anywhere; }
+  .footer > div { gap: 12px 18px; }
+}
+@media (max-width: 360px) {
+  .header { padding-inline: 15px; }
+  .header .brand { gap: 8px; }
+  .header .button { padding-inline: 12px; }
+  .course { padding: 20px; }
+  .price-row { gap: 10px; }
+}
+.header .school-wordmark{font-size:clamp(14px,2vw,20px);line-height:1.2;letter-spacing:0;word-break:keep-all}
